@@ -16,7 +16,7 @@ display: moment().calendar(),
 comments: [{author:"Sam", text: "Sweet!"},{author:"Matt", text: "Great article"}]
 },
 {imageUrl:"http://placehold.it/150x150", 
-title:"Practing HTML", 
+title:"Hola Hola", 
 author:"Jazelle Prado",
 description:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam atque ut modi distinctio voluptatibus exercitationem recusandae, dolore iure laborum nemo quis. Esse nesciunt dolorem magni fuga aspernatur voluptatum officiis consectetur!",
 voteCount:3,
