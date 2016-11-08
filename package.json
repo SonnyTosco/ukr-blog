@@ -1,0 +1,27 @@
+{
+  "name": "ukr-blog",
+  "version": "1.0.0",
+  "description": "Urban Knight Radio Blog",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/digitalartcrew/ukr-blog.git"
+  },
+  "keywords": [
+    "\"Urban",
+    "Knights",
+    "Radio\""
+  ],
+  "author": "Donte Burney",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/digitalartcrew/ukr-blog/issues"
+  },
+  "homepage": "https://github.com/digitalartcrew/ukr-blog#readme",
+  "dependencies": {
+    "express": "^4.14.0"
+  }
+}

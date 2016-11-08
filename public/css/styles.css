@@ -1,0 +1,62 @@
+.ng-enter{
+    transition: 1.0s ease all;
+    opacity: 0;
+}
+.ng-enter.ng-enter-active{
+    opacity: 1;
+}
+
+.ng-leave{
+    transition: 0.5s ease all;
+    opacity: 1;
+}
+
+.ng-leave.ng-leave-active{
+    opacity: 0;
+}
+
+
+.navbar-brand {
+	background-color: black;
+	color: #fff;
+}
+
+.pos{
+	color: grey;
+}
+
+.neg{
+	color: red;
+}
+
+.neu {
+	color: black;
+}
+
+body {
+	background-color: red;
+}
+h5 {
+	float: right;
+}
+.postit {
+	box-shadow: 10px 10px 5px #888888;
+	border-radius: 25px;
+	margin: 10px;
+	background-color: #000;
+	color: #fff;
+}
+
+#postImg{
+	border-radius: 25px;
+	margin-top: 15px;
+}
+
+
+span.glyphicon-arrow-up {
+	font-size: 20px;
+}
+
+span.glyphicon-arrow-down {
+	font-size: 20px;
+}
