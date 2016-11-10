@@ -22,6 +22,14 @@
   },
   "homepage": "https://github.com/digitalartcrew/ukr-blog#readme",
   "dependencies": {
-    "express": "^4.14.0"
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.15.2",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.14.0",
+    "method-override": "^2.3.6",
+    "mongoose": "^4.6.6",
+    "morgan": "^1.7.0",
+    "passport": "^0.3.2",
+    "passport-local": "^1.0.0"
   }
 }

@@ -1,4 +1,4 @@
-app.controller('ukrController',function($scope){
+app.controller('blogController',function($scope){
 	$scope.posts = [{imageUrl:"http://placehold.it/150x150", 
 	title:"The Praise Break", 
 	author:"Noah",
@@ -74,16 +74,55 @@ $scope.addPost = function(post){
 
 
 $scope.predicate="date";
-	// $scope.reverse = true;
-	$scope.order =
-	function(predicate){
-		$scope.reverse = 
-		($scope.predicate === predicate)?
-		!$scope.reverse : false;
-		$scope.predicate = predicate;
-	};
-
-
-
+$scope.order =
+function(predicate){
+	$scope.reverse = 
+	($scope.predicate === predicate)?
+	!$scope.reverse : false;
+	$scope.predicate = predicate;
+};
 
 });
+
+app.controller('logController',function($scope, $http, $rootScope, $location, $state){
+
+	$scope.account = function(){
+		$state.go('form.account');
+	};
+
+	$scope.home = function(){
+		$state.go('form.blog');
+	};
+	//Sign Up
+	$scope.signup = function(user) {
+		if (user.password == user.password2) {
+			console.log('Almost there!');
+			$http.post('/signup', user)
+			.success(function(user) {
+				$rootScope.currentUser = user;
+				$state.go('form.blog');
+			});
+		}
+	};
+
+	$scope.login = function(user) {
+		$http.post('/login', user)
+		.success(function(response) {
+			$rootScope.currentUser = response;
+			$state.go('form.blog');
+		});
+	};
+
+	$scope.logout = function() {
+		$http.post("/logout")
+		.success(function() {
+			$rootScope.currentUser = null;
+			$location.url("/login");
+		});
+	};
+});
+
+app.controller('accountController',function($scope){});
+
+
+
