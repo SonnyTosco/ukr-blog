@@ -1,28 +1,6 @@
-app.controller('blogController',function($scope){
-	$scope.posts = [{imageUrl:"http://placehold.it/150x150", 
-	title:"The Praise Break", 
-	author:"Noah",
-	description:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam atque ut modi distinctio voluptatibus exercitationem recusandae, dolore iure laborum nemo quis. Esse nesciunt dolorem magni fuga aspernatur voluptatum officiis consectetur!",
-	voteCount:2,
-	display: moment().calendar(),
-	comments: [{author:"Aaron", text: "Sweet!"},{author:"Maksim", text: "Great article"}]
-
-},{imageUrl:"http://placehold.it/150x150", 
-title:"What's your Pre-Franz", 
-author:"Pre-Franz",
-description:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam atque ut modi distinctio voluptatibus exercitationem recusandae, dolore iure laborum nemo quis. Esse nesciunt dolorem magni fuga aspernatur voluptatum officiis consectetur!",
-voteCount:5,
-display: moment().calendar(),
-comments: [{author:"Sam", text: "Sweet!"},{author:"Matt", text: "Great article"}]
-},
-{imageUrl:"http://placehold.it/150x150", 
-title:"Hola Hola", 
-author:"Jazelle Prado",
-description:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam atque ut modi distinctio voluptatibus exercitationem recusandae, dolore iure laborum nemo quis. Esse nesciunt dolorem magni fuga aspernatur voluptatum officiis consectetur!",
-voteCount:3,
-display: moment().calendar(),
-comments: [{author:"Donte", text: "Sweet!"},{author:"Mark", text: "Great article"}]
-}];
+app.controller('blogController',['BlogService', '$scope', function($scope, BlogService){
+	// $scope.posts = BlogService.get;
+	console.log(BlogService.all);
 
 $scope.post = {};
 $scope.comment = {};
@@ -62,7 +40,6 @@ $scope.addComment = function(post, comment){
 };
 
 $scope.addPost = function(post){
-    // post.date = new Date();
     post.date = moment();
     post.display = moment().calendar();	
     post.comments = [];
@@ -82,9 +59,9 @@ function(predicate){
 	$scope.predicate = predicate;
 };
 
-});
+}]);
 
-app.controller('logController',function($scope, $http, $rootScope, $location, $state){
+app.controller('logController',['$scope', '$http', '$rootScope', '$location', '$state', function($scope, $http, $rootScope, $location, $state){
 
 	$scope.account = function(){
 		$state.go('form.account');
@@ -120,9 +97,9 @@ app.controller('logController',function($scope, $http, $rootScope, $location, $s
 			$location.url("/login");
 		});
 	};
-});
+}]);
 
-app.controller('accountController',function($scope){});
+app.controller('accountController',['$scope', function($scope){}]);
 
 
 

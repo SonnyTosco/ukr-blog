@@ -1,4 +1,4 @@
-var app = angular.module('ukrApp',['angularMoment', 'ngAnimate','ui.router']);
+var app = angular.module('ukrApp',['angularMoment', 'ngAnimate','ui.router','ngResource']);
 
 app.config(function($stateProvider,$urlRouterProvider) {  
   $stateProvider
